@@ -1,0 +1,44 @@
+.nav {
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: var(--background);
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+
+  transition: transform 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  .logo {
+    font-family: "Orbitron", "Montserrat", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.75rem;
+    span {
+      background: linear-gradient(90deg, var(--blue) 0%, var(--magenta) 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    svg {
+      font-size: 2rem;
+      color: var(--blue);
+    }
+  }
+
+  .btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &.hidden {
+    transform: translateY(-4rem);
+  }
+}
