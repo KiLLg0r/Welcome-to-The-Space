@@ -20,7 +20,7 @@
       -webkit-transform: translateX(26px);
       -ms-transform: translateX(26px);
       transform: translateX(26px);
-      background-image: url("../public/moon-stars-fill.svg");
+      background-image: url("/svg/moon-stars-fill.svg");
     }
   }
 
@@ -44,7 +44,7 @@
       left: 4px;
       bottom: 4px;
       border-radius: 50%;
-      background-image: url("../public/sun-fill.svg");
+      background-image: url("/svg/sun-fill.svg");
       background-repeat: no-repeat;
       background-size: cover;
       -webkit-transition: 0.4s;

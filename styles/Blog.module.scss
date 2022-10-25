@@ -1,0 +1,93 @@
+.main {
+  min-height: calc(100% - 4rem);
+  height: 100%;
+
+  .title {
+    font-family: "Orbitron", "Montserrat", sans-serif;
+    font-size: 3rem;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--darkGold) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+  }
+
+  .carousel {
+    padding: 0.5rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(110%, 500px);
+    overflow-x: auto;
+    gap: 1.5rem;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .post {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    height: 40rem;
+    border-radius: 1rem;
+    background-color: #333238;
+    position: relative;
+
+    .text {
+      display: flex;
+      flex-flow: column;
+      height: 60%;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .post-title {
+      font-family: "Orbitron", "Montserrat", sans-serif;
+      font-size: 3rem;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--darkGold) 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      width: fit-content;
+    }
+
+    .desc {
+      --line-height: 1.5rem;
+      font-size: 1.25rem;
+      line-height: var(--line-height);
+      height: calc(3 * var(--line-height));
+      overflow: hidden;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: var(--line-height);
+        width: 75%;
+        background-image: linear-gradient(90deg, transparent, #333238);
+      }
+    }
+
+    .img {
+      position: relative !important;
+      object-fit: cover;
+    }
+
+    .link {
+      width: fit-content;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      margin-block: 1rem;
+      text-align: center;
+      background-color: var(--blue);
+      text-decoration: underline;
+      transition: all 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+      &:hover {
+        background-color: var(--darkBlue);
+      }
+    }
+  }
+}

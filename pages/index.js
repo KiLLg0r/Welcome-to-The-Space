@@ -1,6 +1,6 @@
 // NextJS
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/future/image";
 
 // React
 import { useState, useEffect } from "react";
@@ -11,11 +11,19 @@ import { useTheme } from "next-themes";
 // Styles
 import hamburger from "../styles/Hamburger.module.scss";
 import navigation from "../styles/Navigation.module.scss";
-import home from "../styles/Home.module.css";
+import home from "../styles/Home.module.scss";
+import destinations from "../styles/Destinations.module.scss";
+import blog from "../styles/Blog.module.scss";
 import toggle from "../styles/Switch.module.scss";
 
 // Icons
 import { IoPlanet } from "react-icons/io5";
+
+// SVG
+import Earth from "../src/svg/Earth.svg";
+import Mars from "../src/svg/Mars.svg";
+import Jupiter from "../src/svg/Jupiter.svg";
+import Comet from "../public/astronaut.png";
 
 // Components
 import Layout from "../components/layout";
@@ -84,7 +92,76 @@ export default function Home() {
       </div>
 
       {/* Landing page */}
-      
+      <div className={home.main}>
+        <div className={home["left-container"]}>
+          <h1>
+            <span>Welcome</span>
+            <span>to The</span>
+            <span className={home.gradient}>Space</span>
+          </h1>
+          <button>Explore topics</button>
+        </div>
+        <div className={home["right-container"]}>
+          <Earth className={home.earth} />
+        </div>
+      </div>
+
+      {/* Destinations */}
+      <div className={destinations.main}>
+        <h1 className={destinations.title}>Destinations</h1>
+
+        <div className={destinations.topics}>
+          <div className={destinations.topic}>
+            <Mars className={destinations.svg} />
+            <div className={destinations.title2}>Mars</div>
+            <div className={destinations.desc}>
+              Planet Mars, new images and discoveries, new information about survival there
+            </div>
+          </div>
+          <div className={destinations.topic}>
+            <Earth className={destinations.svg} />
+            <div className={destinations.title2}>Earth</div>
+            <div className={destinations.desc}>
+              Planet Earth, the latest news and discoveries, new threats and new problems
+            </div>
+          </div>
+          <div className={destinations.topic}>
+            <Jupiter className={destinations.svg} />
+            <div className={destinations.title2}>Jupiter</div>
+            <div className={destinations.desc}>
+              Planet Jupiter, images, composition and why it deserves to be analyzed better
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Blog posts */}
+      <div className={blog.main}>
+        <div className={blog.title}>Recent posts</div>
+        <div className={blog.carousel}>
+          <div className={blog.post}>
+            <Image src={Comet} alt="Post image" sizes="100vw" fill className={blog.img} />
+            <div className={blog.text}>
+              <div className={blog["post-title"]}>
+                <span>Title</span>
+              </div>
+              <p className={blog.desc}>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae iste veniam eveniet incidunt esse,
+                necessitatibus consectetur nihil quos. Qui, itaque, rem voluptatum quasi ab nemo aperiam, fugiat eius
+                dolor nesciunt dolores minus laborum possimus totam repudiandae minima. Quasi rem dolorem sapiente
+                dolores maxime sequi dolorum nihil, voluptates dolor, numquam suscipit corrupti iure? Id, nam assumenda!
+                Quod voluptate, sequi veniam architecto perspiciatis nam odio necessitatibus exercitationem amet a ipsum
+                ducimus ad? Eius alias quibusdam aliquam delectus? Necessitatibus perspiciatis, eveniet provident neque
+                at voluptas dicta distinctio, placeat incidunt tenetur debitis. Eveniet ipsum temporibus quas omnis
+                dolores aliquam optio a rem ipsam dolorum!
+              </p>
+              <a className={blog.link} href="#">
+                Read more
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
