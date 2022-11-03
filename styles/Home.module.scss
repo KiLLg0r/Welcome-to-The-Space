@@ -106,3 +106,10 @@
     }
   }
 }
+
+@media (max-width: 420px) {
+  .main {
+    background-size: 100%;
+    background-position: 0rem -3rem;
+  }
+}

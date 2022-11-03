@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2rem;
+  padding-right: 5.5rem;
 
   transition: transform 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
 
@@ -40,5 +41,43 @@
 
   &.hidden {
     transform: translateY(-4rem);
+  }
+}
+
+.links {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  z-index: 999;
+  background: linear-gradient(to bottom right, rgba(106, 130, 251, 0.25), rgba(252, 92, 125, 0.25));
+  transform: translateY(100%);
+  transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+  backdrop-filter: blur(1rem);
+
+  &.openNav {
+    transform: translateY(0);
+  }
+
+  ul {
+    list-style: none;
+
+    li a {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--foreground);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      display: block;
+      transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      &:hover {
+        background: var(--magenta);
+        color: var(--background);
+      }
+    }
   }
 }

@@ -59,7 +59,7 @@ export default function Home() {
       </Head>
 
       {/* Navigation */}
-      <div className={`${navigation.nav} ${hiddenNav && navigation.hidden}`}>
+      <nav className={`${navigation.nav} ${hiddenNav && navigation.hidden}`}>
         {/* Logo */}
         <div className={navigation.logo}>
           <IoPlanet />
@@ -84,12 +84,30 @@ export default function Home() {
           <button
             className={`${hamburger.hamburger} ${hamburgerActive && hamburger["is-active"]}`}
             type="button"
-            onClick={() => setHamburgerActive(!hamburgerActive)}
+            onClick={() => {
+              setHamburgerActive(!hamburgerActive);
+              document?.body.classList.toggle("noscroll");
+            }}
           >
             <span className={hamburger.line}></span>
           </button>
         </div>
-      </div>
+
+        {/* Navigation links */}
+        <nav className={`${navigation.links} ${hamburgerActive && navigation.openNav}`}>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Posts</a>
+            </li>
+            <li>
+              <a href="#">Account</a>
+            </li>
+          </ul>
+        </nav>
+      </nav>
 
       {/* Landing page */}
       <div className={home.main}>
