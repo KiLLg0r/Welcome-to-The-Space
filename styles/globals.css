@@ -2,6 +2,7 @@
 
 :root {
   --background: #eaeaea;
+  --background2: #cecece;
   --foreground: #1c1b22;
   --gold: #fdf000;
   --darkGold: #d69916;
@@ -15,6 +16,7 @@
 
 [data-theme="dark"] {
   --background: #1c1b22;
+  --background2: #2f2d39;
   --foreground: #eaeaea;
 }
 

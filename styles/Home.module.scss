@@ -20,7 +20,7 @@
     z-index: 2;
 
     h1 {
-      font-size: 3.5rem;
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
       font-weight: 900;
       margin-bottom: 1rem;
       font-family: "Orbitron", "Montserrat", sans-serif;
@@ -35,13 +35,13 @@
         background: linear-gradient(90deg, var(--blue) 0%, var(--green) 100%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: 5rem;
+        font-size: clamp(3rem, 8vw, 5rem);
       }
     }
 
     button {
       padding: 1rem 2rem;
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 3vw, 1.5rem);
       font-weight: 700;
       color: var(--background);
       background-color: var(--foreground);
@@ -110,6 +110,20 @@
 @media (max-width: 420px) {
   .main {
     background-size: 100%;
-    background-position: 0rem -3rem;
+    background-position: 0rem 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    flex-flow: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .left-container,
+    .right-container {
+      flex: 0 0 auto;
+    }
   }
 }

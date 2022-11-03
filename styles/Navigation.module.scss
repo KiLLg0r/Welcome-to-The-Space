@@ -54,7 +54,7 @@
   height: calc(100vh - 4rem);
   z-index: 999;
   background: linear-gradient(to bottom right, rgba(106, 130, 251, 0.25), rgba(252, 92, 125, 0.25));
-  transform: translateY(100%);
+  transform: translateY(calc(100% + 4rem));
   transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
   backdrop-filter: blur(1rem);
 
