@@ -1,0 +1,14 @@
+.title {
+  position: relative;
+  &::before {
+    content: "Enter the title";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  &:focus {
+    &::before {
+      content: "";
+    }
+  }
+}
